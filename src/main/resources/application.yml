@@ -1,0 +1,27 @@
+---
+character-config-starter:
+  characters:
+    -
+      type: Warrior
+      hp: 85
+      mp: 75
+      xp: 0
+      level: 1
+      charAttributes:
+        strength: 10
+        defence: 10
+        agility: 10
+        critical: 10
+      attacks:
+        -
+          name: Brutal Spin 
+          damage: 20
+          duration: 1
+          isSpecial: false
+          mpRequired: 15
+        -
+          name: Destroyer
+          damage: 22
+          duration: 2
+          isSpecial: true
+          mpRequired: 40
