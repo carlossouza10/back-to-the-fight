@@ -1,11 +1,12 @@
 
-# Created by https://www.gitignore.io/api/java,eclipse,java-web,intellij
+# Created by https://www.gitignore.io/api/java,maven,eclipse,java-web,intellij
 
 ### Eclipse ###
 
 .metadata
 bin/
 tmp/
+target/
 *.tmp
 *.bak
 *.swp
@@ -153,4 +154,17 @@ hs_err_pid*
 ## ignoring target file
 target/
 
-# End of https://www.gitignore.io/api/java,eclipse,java-web,intellij
+### Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+
+# End of https://www.gitignore.io/api/java,maven,eclipse,java-web,intellij
