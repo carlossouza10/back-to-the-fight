@@ -8,16 +8,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.crafaelsouza.backtothefight.domain.CharacterStarterConfig;
 import com.crafaelsouza.backtothefight.domain.model.GameFlow;
 import com.crafaelsouza.backtothefight.domain.service.FlowService;
 
 @SpringBootApplication
 public class SpringBootConsoleApplication implements CommandLineRunner {
 
-	@Autowired
-	private CharacterStarterConfig config;
-	
 	@Autowired
 	private FlowService flowService;
 	
@@ -30,12 +26,15 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
     //access command line arguments
     @Override
     public void run(String... args) throws Exception {
+		Scanner scanner = null;
+		while (true) {
+			GameFlow gameFlow = flowService.startGameFlow();
 
-    	GameFlow gameFlow = flowService.startGameFlow();
-    	Scanner scanner = new Scanner(System.in);
-    	System.out.print(gameFlow.getQuestion() + "\n" + gameFlow.getOptions().toString());
-    	String option = scanner.nextLine();
-    	System.out.println(option);
-    	scanner.close();
+			scanner = new Scanner(System.in);
+			System.out.print(gameFlow.getQuestion() + "\n" + gameFlow.getOptions().toString());
+			String option = scanner.nextLine();
+			System.out.println(option);
+
+		}
     }
 }
